@@ -1,12 +1,12 @@
-
-
 <template>
     <div class="circle">
+<!--      <button style="position: absolute;z-index: 100;top: 100px;left: 100px;"> </button>-->
         <Row class='content'>
             <Col span="7">
                 <div class="list">
                     <div class="left">
-                        <span class='title'><span class="title-6">聊天分析</span></span>
+                      <router-link :to="{path: '/page3'}"><span class='title'><span class="title-6" >任务统计</span></span></router-link>
+
                         <span class="angle1"></span>
                         <span class="angle2"></span>
                         <span class="angle3"></span>
@@ -18,7 +18,7 @@
                 </div>
                 <div class="list">
                     <div class="left">
-                        <span class='title'><span class="title-10">办公时长分析</span></span>
+                        <span class='title'><span class="title-10">时长统计</span></span>
                         <span class="angle1"></span>
                         <span class="angle2"></span>
                         <span class="angle3"></span>
@@ -36,7 +36,7 @@
             <Col span="7">
                 <div class="list">
                     <div class="right">
-                        <span class='title'><span class="title-10">好友分析</span></span>
+                        <span class='title'><span class="title-10">任务统计</span></span>
                         <span class="angle1"></span>
                         <span class="angle2"></span>
                         <span class="angle3"></span>
@@ -49,7 +49,7 @@
                 </div>
                 <div class="list">
                     <div class="right">
-                        <span class='title'><span class="title-10">微信朋友圈分析</span></span>
+                        <span class='title'><span class="title-10">时长统计</span></span>
                         <span class="angle1"></span>
                         <span class="angle2"></span>
                         <span class="angle3"></span>
@@ -66,7 +66,7 @@
             <Col span="16">
                 <div class="list">
                     <div class="bottom">
-                        <span class='title'><span class="title-8">违规话术分布趋势</span></span>
+                        <span class='title'><span class="title-8">任务按年分布趋势</span></span>
                         <span class="angle1"></span>
                         <span class="angle2"></span>
                         <span class="angle3"></span>
@@ -76,7 +76,7 @@
                 </div>
                 <div class="list">
                     <div class="bottom">
-                        <span class='title'><span class="title-10">各部门违规话术情况对比</span></span>
+                        <span class='title'><span class="title-10">任务情况对比</span></span>
                         <span class="angle1"></span>
                         <span class="angle2"></span>
                         <span class="angle3"></span>
@@ -86,7 +86,7 @@
                 </div>
                 <div class="list">
                     <div class="bottom">
-                        <span class='title'><span class="title-10">红包转账分布趋势</span></span>
+                        <span class='title'><span class="title-10">人员分布</span></span>
                         <span class="angle1"></span>
                         <span class="angle2"></span>
                         <span class="angle3"></span>
@@ -98,7 +98,7 @@
             <Col span="8">
                 <div class="list right-bottom">
                     <div class="bottom bottom1">
-                        <span class='title'><span class="title-10">各部门红包转账对比</span></span>
+                        <span class='title'><span class="title-10">人员占比</span></span>
                         <span class="angle1"></span>
                         <span class="angle2"></span>
                         <span class="angle3"></span>
@@ -245,6 +245,9 @@ export default {
         }
     },
     methods: {
+      runto(url){
+        this.$router.push(url)
+      },
         drawDot () {
             let canvas = document.getElementById('dot');
             let ctx = canvas.getContext('2d');

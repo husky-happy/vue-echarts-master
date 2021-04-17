@@ -10,7 +10,7 @@
         },
         data() {
             return {
-                
+
             }
         },
         methods: {
@@ -21,11 +21,11 @@
                 },
                 legend: {
                     data:[{
-                        name:'违规次数',
+                        name:'找回次数',
                         icon:'circle'
                     },
                     {
-                        name:'违规人数',
+                        name:'未找回次数',
                         icon:'circle'
                     }
                         ],
@@ -45,7 +45,7 @@
                     bottom: 10,
                     containLabel: true
                 },
-               
+
                 xAxis: {
                         type: 'category',
                         boundaryGap: false,
@@ -63,7 +63,7 @@
                              color:'rgb(97,185,200)',
                              fontSize:10
                         },
-                        data: ["2017", "4", "7", "10", "2018", "4", "7"]
+                        data: ["2016", "2017", "2018", "2019", "2021", "2022"]
                     },
                 yAxis: [
                      {
@@ -112,7 +112,7 @@
                             fontSize:10,
                             formatter: function (value) {
                                 if(value==350){
-                                value='(个)';
+                                value='(次)';
                                 }
                                 return value;
                             },
@@ -125,7 +125,7 @@
                 ],
                 series: [
                     {
-                        name:'违规次数',
+                        name:'找回次数',
                         type:'line',
                         smooth:true,
                         symbol: 'none',
@@ -135,27 +135,27 @@
                         itemStyle:{
                             color:'#F39800'
                         },
-                        data:[50, 132, 100, 300, 90, 230, 210]
+                        data:[200, 132, 100, 300, 190, 230]
                     },
                     {
-                        name:'违规人数',
+                        name:'未找回次数',
                         yAxisIndex:1,
                         type:'line',
                         smooth:true,
                         symbol: 'none',
                         lineStyle:{
                             color:'#BF232A',
-                            
+
                         },
                         itemStyle:{
                             color:'#BF232A'
                         },
-                        data:[330, 310,132, 100, 300, 90, 230]
+                        data:[60, 100,60, 80, 90, 70]
                     },
                 ]
             };
              let myChart = this.$echarts.init(document.getElementById(this.id));
-           
+
             myChart.clear();
             myChart.resize(
                 {

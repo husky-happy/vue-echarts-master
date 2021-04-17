@@ -10,7 +10,7 @@
         },
         data() {
             return {
-                
+
             }
         },
         methods: {
@@ -26,7 +26,7 @@
                         right:40,
                     },
                     legend: {
-                        data:[{name:'朋友圈个数',icon:'circle'}],
+                        data:[{name:'任务时长',icon:'circle'}],
                         right:10,
                         top:10,
                         itemWidth:7,
@@ -55,9 +55,9 @@
                             inside:true
                         },
                         z:2,
-                        data: ['2017','4','7','2018','4','7','10']
+                        data: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月","10月","11月","12月"]
                     },
-                    yAxis: 
+                    yAxis:
                         {
                         type: 'value',
                         interval:50,
@@ -77,7 +77,7 @@
                             fontSize:10,
                             formatter: function (value) {
                                 if(value==350){
-                                value='(个)';
+                                value='(小时)';
                                 }
                                 return value;
                             },
@@ -86,13 +86,13 @@
                             show:false,
                         },
                         },
-                        
+
                     series: [{
-                        name: '朋友圈个数',
+                        name: '任务时长',
                         type: 'line',
                         symbol: 'none',
                         smooth: true,
-                        data: [200, 111, 114, 234, 260, 130, 210],
+                        data: [213, 190, 137, 99, 63, 196, 248, 212,248, 112,200,180],
                         lineStyle:{
                             width:1,
                             color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1,[{
@@ -101,7 +101,7 @@
                                             offset: 0.4, color: 'rgba(178,19,86,1)' // 0% 处的颜色
                                         },  {
                                             offset: 1, color: 'rgba(245,145,17,1)' // 100% 处的颜色
-                                        }]), //背景渐变色 
+                                        }]), //背景渐变色
                         },
                         itemStyle:{
                             color:'rgb(212,37,43)'
@@ -113,14 +113,14 @@
                                             offset: 0.5, color: 'rgba(112,20,82,1)' // 0% 处的颜色
                                         },  {
                                             offset: 1, color: 'rgba(112,20,82,0)' // 100% 处的颜色
-                                        }]), //背景渐变色 
+                                        }]), //背景渐变色
                             origin:'start'
                         }
                     },
                     ]
                 };
                  let myChart = this.$echarts.init(document.getElementById(this.id));
-            
+
                 myChart.clear();
                 myChart.resize(
                     {
@@ -128,7 +128,7 @@
                     height:document.getElementById(this.id).offsetHidth
                     }
                 )
-            
+
                 myChart.setOption(option);
                 }
         },

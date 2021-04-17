@@ -10,7 +10,7 @@
         },
         data() {
             return {
-                
+
             }
         },
         methods: {
@@ -32,8 +32,8 @@
                                      color:'rgb(111,223,244)',
                                 },
                                 data: [
-                                    {name:'添加好友',icon:'rect'},
-                                    {name:'好友总数',icon:'rect'}
+                                    {name:'救援次数',icon:'rect'},
+                                    {name:'找回老人次数',icon:'rect'}
                                 ],
                             },
                         ],
@@ -62,20 +62,20 @@
                             }
                         },
                             axisTick:{show:false},
-                             data: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月']
+                             data: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
                             },
                         ],
-                        yAxis: 
+                        yAxis:
                             {
                             type: 'value',
                             min:0,
-                            max:300,
+                            max:40,
                             axisLabel:{
                                  color:'rgb(111,223,244)',
                                 fontSize:8,
                                 formatter: function (value) {
-                                        if(value==300){
-                                        value='(笔)';
+                                        if(value==40){
+                                        value='(次)';
                                         }
                                         return value;
                                         },
@@ -92,14 +92,14 @@
                             axisTick:{
                                 length:3
                             },
-                           
+
                             splitLine:{show:false}
-                           
+
                         },
                         series: [
-                           
+
                             {
-                                name: '添加好友',
+                                name: '找回次数',
                                 type: 'bar',
                                  barWidth:7,
                                 stack: '总数',
@@ -110,13 +110,13 @@
                                         offset: 0.4, color: 'rgba(248,123,134,1)' // 0% 处的颜色
                                     },  {
                                         offset: 1, color: 'rgba(243,96,135,1)' // 100% 处的颜色
-                                    }]), //背景渐变色 
+                                    }]), //背景渐变色
                                      barBorderRadius:[3.5,3.5,0,0],
                                 },
-                                data: [120, 102, 101, 134, 190, 130, 120,190, 130, 120]
+                                data: [20, 6, 15, 13, 32, 35, 25,27,12,28,12,8]
                             },
                             {
-                                name: '好友总数',
+                                name: '未找回次数',
                                 type: 'bar',
                                  barWidth:7,
                                 stack: '总数',
@@ -124,13 +124,13 @@
                                     color:'#8C14EA',
                                     barBorderRadius:[3.5,3.5,0,0,],
                                 },
-                                data: [120, 132, 101, 134, 90, 130, 110,90, 130, 120]
+                                data: [2, 3, 5, 3, 2, 4, 5,7,2,2,2,3]
                             },
-                            
+
                         ]
                     };
                      let myChart = this.$echarts.init(document.getElementById(this.id));
-           
+
                     myChart.clear();
                     myChart.resize(
                         {
@@ -138,7 +138,7 @@
                         height:document.getElementById(this.id).offsetHidth
                         }
                     )
-                
+
                     myChart.setOption(option);
                     }
         },

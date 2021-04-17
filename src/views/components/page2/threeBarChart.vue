@@ -10,7 +10,7 @@
         },
         data() {
             return {
-                
+
             }
         },
         methods: {
@@ -26,7 +26,7 @@
                     trigger: 'axis'
                 },
                 legend: {
-                    data:[{name:'金额',icon:'circle'},{name:'人数',icon:'circle'},{name:'次数',icon:'circle'}],
+                    data:[{name:'志愿者',icon:'circle'},{name:'走失老人',icon:'circle'},{name:'小程序用户',icon:'circle'}],
                     left:"8%",
                     top:"10%",
                     itemWidth:7,
@@ -52,15 +52,15 @@
                             showMaxLabel:false,
                             fontSize:10,
                         },
-                        data : ['2017','4','7','10','2018','4','7','0']
+                        data : [ "2016","2017", "2018", "2019", "2021", "2022"]
                     }
                 ],
                 yAxis :[
                     {
                     type: 'value',
-                    interval:50,
+                    interval:500,
                     min:0,
-                    max:400,
+                    max:4000,
                     splitNumber:7,
                     axisLine:{
                         symbol:['none','arrow'],
@@ -74,67 +74,8 @@
                         showMaxLabel:false,
                         fontSize:10,
                         formatter: function (value) {
-                            if(value==350){
-                            value='(元)';
-                            }
-                            return value;
-                        },
-                    },
-                    splitLine:{
-                        show:false,
-                    },
-                },
-                {
-                    type: 'value',
-                    interval:50,
-                    position:"right",
-                    offset:-35,
-                    min:0,
-                    max:400,
-                    splitNumber:7,
-                    axisLine:{
-                        symbol:['none','arrow'],
-                        symbolSize:[6,6],
-                       lineStyle:{
-                           color:'rgb(18,44,73)'
-                       }
-                    },
-                    axisLabel:{
-                        color:'rgb(97,185,200)',
-                        showMaxLabel:false,
-                        fontSize:10,
-                        formatter: function (value) {
-                            if(value==350){
-                            value='(人)';
-                            }
-                            return value;
-                        },
-                    },
-                    splitLine:{
-                        show:false,
-                    },
-                },
-                {
-                    type: 'value',
-                     position:"right",
-                    interval:50,
-                    min:0,
-                    max:400,
-                    splitNumber:7,
-                    axisLine:{
-                        symbol:['none','arrow'],
-                        symbolSize:[6,6],
-                       lineStyle:{
-                           color:'rgb(18,44,73)'
-                       }
-                    },
-                    axisLabel:{
-                        color:'rgb(97,185,200)',
-                        showMaxLabel:false,
-                        fontSize:10,
-                        formatter: function (value) {
-                            if(value==350){
-                            value='(次)';
+                            if(value==3500){
+                            value='(人次)';
                             }
                             return value;
                         },
@@ -146,11 +87,11 @@
                 ],
                 series : [
                     {
-                        name:'金额',
+                        name:'志愿者',
                         type:'bar',
                         barGap:0,
                         barWidth:6,
-                        data:[200, 49, 70, 232, 256, 76.7, 135.6],
+                        data:[2000,1800,3000,1800,2600,2300],
                         itemStyle:{
                               barBorderRadius:[3,3,0,0],
                             color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1,[{
@@ -161,11 +102,11 @@
                         }
                     },
                     {
-                        name:'人数',
+                        name:'走失老人',
                         type:'bar',
                          barGap:0,
                          barWidth:6,
-                        data:[26, 59, 90, 264, 287, 70.7, 175.6],
+                        data:[100, 209, 390, 264, 287, 380],
                         itemStyle:{
                              barBorderRadius:[3,3,0,0],
                             color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1,[{
@@ -176,11 +117,11 @@
                         }
                     },
                     {
-                        name:'次数',
+                        name:'小程序用户',
                         type:'bar',
                          barGap:0,
                          barWidth:6,
-                        data:[ 264, 287, 150, 175.6, 182.2, 48.7, 18.8],
+                        data:[ 3000,2700,3600,3500,3465,2800],
                         itemStyle:{
                              barBorderRadius:[3,3,0,0],
                             color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1,[{
@@ -193,7 +134,7 @@
                 ]
             };
              let myChart = this.$echarts.init(document.getElementById(this.id));
-           
+
             myChart.clear();
             myChart.resize(
                 {

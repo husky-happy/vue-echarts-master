@@ -10,7 +10,9 @@
                     <span class="angle4"></span>
                     <div class="left1" style="height:50%;">
                         <div style="height:50%;">
-                        <avatar src="https://z3.ax1x.com/2021/03/28/cpQM5T.png" style="width: 300px;height: 150px" class="logo"></avatar>
+                          <router-link :to="{path: '/page2'}">
+                            <avatar src="https://z3.ax1x.com/2021/03/28/cpQM5T.png" style="width: 300px;height: 150px" class="logo"></avatar>
+                          </router-link>
                         </div>
                         <div style="height: 50%;display: flex">
                             <div style="height: 100%; width: 50%;">
@@ -98,7 +100,7 @@
     import $ from "jquery";
     import areaChart from './components/page2/areaChart.vue'
     import radarChart from './components/radar.vue'
-    import funnel from './components/page1/funnel.vue';
+    import funnel from './components/page3/funnel.vue';
 
     export default {
         name: '',
@@ -1240,7 +1242,7 @@
     }
     .logo{
       position: relative;
-      left:100px;
+      left:80px;
       top:20px;
     }
 </style>

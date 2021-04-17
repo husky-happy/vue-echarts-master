@@ -10,7 +10,7 @@
         },
         data() {
             return {
-                
+
             }
         },
         methods: {
@@ -19,7 +19,7 @@
                     legend: {
                         data:[
                         {
-                            name:'办公时长',
+                            name:'救援时长',
                             icon:'rect'
                         },
                             ],
@@ -55,7 +55,7 @@
                                 fontSize:10,
                                 interval:0,
                             },
-                            data: ["1部", "2部", "3部", "4部", "5部", "6部", "7部", "8部", "9部","10部"]
+                            data: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月","10月","11月","12月"]
                         }
                     ],
                     yAxis: [
@@ -76,10 +76,10 @@
                                 color:'rgb(97,185,200)',
                                 showMaxLabel:false,
                                 fontSize:10,
-                                
+
                                 formatter: function (value) {
                                     if(value==350){
-                                    value='(次)';
+                                    value='(小时)';
                                     }
                                     return value;
                                 },
@@ -106,7 +106,7 @@
                                 fontSize:10,
                                 formatter: function (value) {
                                     if(value==350){
-                                    value='(个)';
+                                    value='(小时)';
                                     }
                                     return value;
                                 },
@@ -128,16 +128,16 @@
                                     offset: 0.4, color: 'rgba(148,144,249,1)' // 0% 处的颜色
                                 },  {
                                     offset: 1, color: 'rgba(223,125,253,1)' // 100% 处的颜色
-                                }]), //背景渐变色  
+                                }]), //背景渐变色
                             },
                             barWidth:10,
                             barCategoryGap:10,
-                            data:[213, 190, 137, 99, 63, 196, 248, 212,248, 112]
+                            data:[213, 190, 137, 99, 63, 196, 248, 212,248, 112,200,180]
                         },
                     ]
                 };
                 let myChart = this.$echarts.init(document.getElementById(this.id));
-            
+
                 myChart.clear();
                 myChart.resize(
                     {

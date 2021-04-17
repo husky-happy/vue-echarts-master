@@ -10,15 +10,15 @@
         },
         data() {
             return {
-                
+
             }
         },
         methods: {
             setChart () {
                 let option = {
-                
+
                     legend: {
-                    data:[{name:'违规次数',icon:'circle'},{name:'违规人数',icon:'circle'}],
+                    data:[{name:'找回次数',icon:'circle'},{name:'未找回次数',icon:'circle'}],
                     left:"8%",
                     top:"10%",
                     itemWidth:7,
@@ -135,7 +135,7 @@
                             axisLabel: {
                                 show: false
                             },
-                           
+
                         },
                         //中间的标尺
                         {
@@ -160,7 +160,7 @@
                                  interval:0,
                             },
 
-                            data:["1部", "2部", "3部", "4部", "5部", "6部", "7部","8部","9部",'10部',"11部"]
+                            data:["2016", "2017", "2018", "2019", "2021", "2022"]
                         },
                         //右边的标尺
                         {
@@ -189,7 +189,7 @@
                         }
                     ],
                     series: [{
-                        name: '违规次数',
+                        name: '找回次数',
                         type: 'bar',
                         barGap: 10,
                         barWidth: "40%",
@@ -205,20 +205,20 @@
                                 ),
                                 barBorderRadius:5,
                             },
-                            
+
                             emphasis: {
                                 show: false
                             }
                         },
-                        data:[320, 302, 341, 374, 390, 450, 420,374, 390, 450, 420]
+                        data:[200, 132, 100, 300, 190, 230]
                     }, {
-                        name: '违规人数',
+                        name: '未找回次数',
                         type: 'bar',
                         barGap: 10,
                         barWidth: "40%",
                         xAxisIndex: 2,
                         yAxisIndex: 2,
-                        
+
                         itemStyle: {
                             normal: {
                              color: new this.$echarts.graphic.LinearGradient(
@@ -236,12 +236,12 @@
                                 show: false
                             }
                         },
-                            data:[320, 302, 341, 374, 390, 450, 420,374, 390, 450, 420]
+                            data:[60, 100,60, 80, 90, 70]
                     }]
                 };
-          
+
             let myChart = this.$echarts.init(document.getElementById(this.id));
-           
+
             myChart.clear();
             myChart.resize(
                 {

@@ -10,7 +10,7 @@
         },
         data() {
             return {
-                
+
             }
         },
         methods: {
@@ -18,7 +18,7 @@
                 let option = {
                 title:[
                    {
-                        text:"【金额】",
+                        text:"【志愿者】",
                         left: '12%',
                         bottom: '6%',
                         textStyle:{
@@ -27,7 +27,7 @@
                         }
                    },
                    {
-                        text:"【人数】",
+                        text:"【走失老人】",
                         left: '46%',
                         bottom: '6%',
                         textStyle:{
@@ -36,7 +36,7 @@
                         }
                    },
                    {
-                        text:"【次数】",
+                        text:"【小程序用户】",
                         right: '12%',
                         bottom: '6%',
                         textStyle:{
@@ -51,11 +51,12 @@
                 },
                 legend: {
                     data:[
-                        {name:'一部',icon:'circle'},
-                        {name:'二部',icon:'circle'},
-                        {name:'三部',icon:'circle'},
-                        {name:'四部',icon:'circle'},
-                        {name:'五部',icon:'circle'},
+                        {name:'2016',icon:'circle'},
+                        {name:'2017',icon:'circle'},
+                        {name:'2018',icon:'circle'},
+                        {name:'2019',icon:'circle'},
+                        {name:'2020',icon:'circle'},
+                        {name:'2021',icon:'circle'}
                         ],
                     left:"8%",
                     top:"10%",
@@ -68,16 +69,17 @@
                 },
                 series : [
                     {
-                        name: '【金额】',
+                        name: '【志愿者】',
                         type: 'pie',
                         radius : '40%',
                         center: ['17%', '60%'],
                         data:[
-                            {value:335, name:'一部'},
-                            {value:310, name:'二部'},
-                            {value:234, name:'三部'},
-                            {value:135, name:'四部'},
-                            {value:1548, name:'五部'}
+                            {value:2000, name:'2016'},
+                            {value:1800, name:'2017'},
+                            {value:3000, name:'2018'},
+                            {value:1800, name:'2019'},
+                            {value:2600, name:'2020'},
+                          {value:2300, name:'2021'}
                         ],
                         label:{
                             fontSize:8,
@@ -103,16 +105,17 @@
                         }
                     },
                     {
-                        name: '【人数】',
+                        name: '【走失老人】',
                         type: 'pie',
                         radius : '40%',
                         center: ['50%', '60%'],
                         data:[
-                            {value:545, name:'一部'},
-                            {value:210, name:'二部'},
-                            {value:2534, name:'三部'},
-                            {value:1335, name:'四部'},
-                            {value:1548, name:'五部'}
+                          {value:100, name:'2016'},
+                          {value:209, name:'2017'},
+                          {value:390, name:'2018'},
+                          {value:264, name:'2019'},
+                          {value:287, name:'2020'},
+                          {value:380, name:'2021'}
                         ],
                         label:{
                             fontSize:8,
@@ -138,16 +141,17 @@
                         }
                     },
                     {
-                        name: '【次数】',
+                        name: '【小程序用户】',
                         type: 'pie',
                         radius : '40%',
                         center: ['82%', '60%'],
                         data:[
-                            {value:435, name:'一部'},
-                            {value:310, name:'二部'},
-                            {value:334, name:'三部'},
-                            {value:1135, name:'四部'},
-                            {value:1548, name:'五部'}
+                          {value:3000, name:'2016'},
+                          {value:2700, name:'2017'},
+                          {value:3600, name:'2018'},
+                          {value:3500, name:'2019'},
+                          {value:3465, name:'2020'},
+                          {value:2800, name:'2021'}
                         ],
                         label:{
                             fontSize:8,
@@ -175,7 +179,7 @@
                 ]
             };
             let myChart = this.$echarts.init(document.getElementById(this.id));
-           
+
             myChart.clear();
             myChart.resize(
                 {
