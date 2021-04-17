@@ -4,7 +4,7 @@
           <Row type="flex" justify="center">
             <Col class="flex-middle">
               <avatar src="https://z3.ax1x.com/2021/03/27/cSPuX4.png" style="width: 1500px;height: 100px"></avatar>
-              <div class="abo">数字监控大屏</div>
+              <div class="abo">数字可视化大屏</div>
             </Col>
           </Row>
 <!--            <div style="float: left;" class="selectRange">-->

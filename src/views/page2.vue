@@ -3,7 +3,7 @@
 <template>
     <div class="circle">
         <Row class='content'>
-            <Col span="8">
+            <Col span="7">
                 <div class="list">
                     <div class="left">
                         <span class='title'><span class="title-6">聊天分析</span></span>
@@ -13,9 +13,6 @@
                         <span class="angle4"></span>
                         <div class="chart-68">
                             <area-chart ref="chart1" id="left_1" :data="chatLineData"></area-chart>
-                        </div>
-                        <div class="chart-32">
-                            <radar-chart ref="chart2" id="left_2" :data="chatRadarData"></radar-chart>
                         </div>
                     </div>
                 </div>
@@ -29,20 +26,14 @@
                         <div class="chart-68">
                             <bar-chart ref="chart3" id="left_3"></bar-chart>
                         </div>
-                        <div class="chart-32">
-                            <radar-chart ref="chart4" id="left_4" :data="officeRadarData"></radar-chart>
-                        </div>
                     </div>
                 </div>
 
             </Col>
-            <Col span="8">
-                <div class="circlePie">
-                    <canvas id="main" width="1000" height="1000"></canvas>
-                    <canvas id="dot" width="500" height="500"></canvas>
-                </div>
+            <Col span="10">
+              <radar-part ref="chart6"></radar-part>
             </Col>
-            <Col span="8">
+            <Col span="7">
                 <div class="list">
                     <div class="right">
                         <span class='title'><span class="title-10">好友分析</span></span>
@@ -50,9 +41,6 @@
                         <span class="angle2"></span>
                         <span class="angle3"></span>
                         <span class="angle4"></span>
-                        <div class="chart-32">
-                            <radar-chart ref="chart5" id="right_1" :data="friendRadarData"></radar-chart>
-                        </div>
                         <div class="chart-68">
                             <double-bar-chart ref="chart6" id="right_2"></double-bar-chart>
                         </div>
@@ -66,9 +54,6 @@
                         <span class="angle2"></span>
                         <span class="angle3"></span>
                         <span class="angle4"></span>
-                         <div class="chart-32">
-                            <radar-chart ref="chart7" id="right_3" :data="momentsRadarData"></radar-chart>
-                        </div>
                         <div class="chart-68">
                             <single-area-chart ref="chart8" id="right_4"></single-area-chart>
                         </div>
@@ -138,8 +123,10 @@ import doubleLine from './components/page2/doubleLine.vue'
 import threeBarChart from './components/page2/threeBarChart.vue'
 import pieChart from './components/page2/pieChart.vue'
 import doubleBars from './components/page2/doubleBars.vue'
+import radarPart from './components/page2/radarPart.vue';
 export default {
     components:{
+        radarPart,
         areaChart,
         radarChart,
         barChart,
@@ -161,43 +148,38 @@ export default {
                 radius: 218
             },
             title:['累计话术违规个数:456,789','累计办公次数:123,12','累计办公时长:134,23','累计服务好友次数:234,234','累计服务好友数量:123,123','累计设备违规个数:678,123'],
-            chatLineData:[
-                {
-                    name:'聊天次数',
-                    color:['158,112,255','110,94,255'],
-                    data: [200, 12, 21, 54, 260, 130, 210],
-                },
-                {
-                    name:'聊天人数',
-                    color:['72,206,253','83,86,241'],
-                    data: [50, 182, 234, 191, 190, 30, 10],
-                }
-            ],
-            chatRadarData: {
-                title:'各部门聊天对比',
-                position:['center', '85%'],
-                center: ['50%', '50%'],
-                indicator: [
-                    { text: '一部' },
-                    { text: '二部' },
-                    { text: '三部' },
-                    { text: '四部' },
-                    { text: '五部' },
-                    { text: '六部' }
-                ],
-                data: [
-                    {
-                        name: '聊天次数',
-                        color: '#0DF5F8',
-                        value: [100, 8, 0.40, -80, 2000, 332],
-                    },
-                    {
-                        name: '聊天人数',
-                        color: '#7921AD',
-                        value: [60, 5, 0.30, -100, 1500, 221],
-                    }
-                ]
+          chatLineData:[
+            {
+              name:'救援次数',
+              color:['158,112,255','110,94,255'],
+              data: [23, 8, 15, 16, 32, 43, 25,31,12,32,22,8],
             },
+            {
+              name:'找回老人次数',
+              color:['72,206,253','83,86,241'],
+              data: [20, 6, 15, 13, 32, 43, 25,27,12,28,12,8],
+            }
+          ],
+          chatRadarData: {
+            title:'救援队能力评估',
+            position:['center', '85%'],
+            center: ['50%', '50%'],
+            indicator: [
+              { text: '救援速度',max:100 },
+              { text: '凝聚力',max:100  },
+              { text: '任务完成率' ,max:100 },
+              { text: '出队速度',max:100  },
+              { text: '善后工作',max:100  },
+
+            ],
+            data: [
+              {
+                name: '能力评估',
+                color: '#0DF5F8',
+                value: [85, 80, 75, 85, 90],
+              }
+            ]
+          },
             officeRadarData: {
                 title: '各部门办公时长对比',
                 position:['center', '85%'],
@@ -705,7 +687,7 @@ export default {
                         height:100%;
                     }
                     .chart-68 {
-                        width:68%;
+                        width: 90%;
                         height:100%;
                         float: left;
                     }

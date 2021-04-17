@@ -22,7 +22,6 @@
                         </div>
                     </div>
                     <div class="left1" style="height:50%;">
-<!--                        <red-pocket ref="redPocket"></red-pocket>-->
                       <funnel ref="chart16" id="bottom_8"></funnel>
                     </div>
                 </div>
